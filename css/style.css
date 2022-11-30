@@ -72,16 +72,50 @@
 
     .container {
         width: 100%;
-        max-width: 1110px;
+        max-width: 1440px;
+        padding: 0 165px;
         /* margin: 0 auto;
-        padding: 0 165px 100px;
+        padding: 0 165px ;
 
         min-width: 320px;*/
     }
 
     .btn {
+        position: relative;
+        outline: none;
         background: #3F2AFF;
         border-radius: 20px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        border-radius: inherit;
+        border: 1px solid #3F2AFF;
+        outline: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .btn:focus::after {
+        opacity: 1;
+    }
+
+    .btn:hover {
+        background: #71A7E2;
+    }
+
+    .btn:active {
+        background: #0E3B6C;
+    }
+
+    .btn:active::after {
+        opacity: 0;
     }
 
     .section-title {
@@ -100,13 +134,17 @@
     }
 
     .header__container {
-        max-width: 1134px;
         align-items: center;
     }
 
     .header__logo {
         display: inline-block;
         margin-right: auto;
+        margin-left: -8px;
+    }
+
+    .header__nav {
+        margin-right: -8px;
     }
 
     .nav__item:not(:last-child) {
@@ -114,25 +152,59 @@
     }
 
     .nav__link {
+        position: relative;
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
         color: #FFFFFF;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav__link:focus {
+        outline-offset: 2px;
+        outline: 1px solid #d3e013;
+    }
+
+    .nav__link:hover {
+        color: #d3e013;
+    }
+
+    .nav__link::after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #d3e013;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .nav__link:active::after {
+        opacity: 1;
+    }
+
+    .nav__link:active {
+        outline: none;
+        color: #d3e013;
+    }
+
+    .burger {
+        display: none;
     }
     /* hero */
 
     .hero {
         background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
     }
-    /* .hero__container {
-        background-image: url(../img/hero.png);
-        background-size: 632px 593px;
-        background-position: right;
-        background-repeat: no-repeat;
-    }*/
+
+    .hero__container {
+        padding: 0 169px 0 169px;
+    }
 
     .hero__left {
-        padding: 130px 0;
+        padding: 129px 0;
     }
 
     .hero__title {
@@ -179,11 +251,11 @@
     }
 
     .benefits__container {
-        padding: 80px 0;
+        padding: 80px 160px 80px 159px;
     }
 
     .benefits__top {
-        margin-bottom: 22px;
+        margin-bottom: 24px;
         align-items: center;
     }
 
@@ -245,7 +317,7 @@
     }
 
     .benefits__descr--icon-3::before {
-        margin-left: 7px;
+        margin-left: 9px;
         background-image: url(../img/benefit__item-icon-3.svg);
     }
 
@@ -259,7 +331,7 @@
     }
 
     .teachers__container {
-        padding: 74px 0 74px;
+        padding: 74px 152px 72px 158px;
     }
 
     .teachers__title {
@@ -272,8 +344,14 @@
         margin-right: -12px;
     }
 
+    .teachers__item {
+        display: flex;
+        flex-direction: column;
+    }
+
     .teachers__img {
-        margin-bottom: 25px;
+        flex-grow: 1;
+        margin-bottom: 13px;
     }
 
     .teachers__sub-title {
@@ -300,7 +378,7 @@
     }
 
     .kurses__container {
-        padding: 74px 0 48px;
+        padding: 74px 156px 50px 158px;
     }
 
     .kurses__title {
@@ -318,13 +396,19 @@
         margin-bottom: 30px;
     }
 
+    .kurses__img {
+        flex-grow: 1;
+        max-height: 180px;
+        min-height: 180px;
+    }
+
     .kurses__content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        flex-grow: 0;
-        padding: 30px;
+        flex-grow: 1;
+        padding: 30px 30px 30px 30px;
         min-height: 300px;
         border-radius: 0px 0px 20px 20px;
         background: #EDF0F9;
@@ -342,6 +426,7 @@
 
     .kurses__descr {
         margin: 0;
+        margin-bottom: 20px;
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
@@ -377,13 +462,21 @@
         height: 24px;
     }
 
+    .social-link path {
+        fill: white;
+    }
+
+    .social-link:hover path {
+        fill: rgb(208, 240, 26);
+    }
+
     .footer__item:not(:last-child) {
         margin-right: 33px;
     }
 
     .footer__logo {
         display: block;
-        margin: 0 auto;
+        margin: 3px auto;
         width: 105px;
         height: 15px;
     }
