@@ -128,6 +128,10 @@
     /* header */
 
     .header {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
         flex-wrap: wrap;
         padding: 27px 0;
         background-color: #3F2AFF;
@@ -196,6 +200,7 @@
     /* hero */
 
     .hero {
+        padding-top: 80px;
         background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #212133 100%);
     }
 
@@ -214,6 +219,10 @@
         font-size: 60px;
         line-height: 100%;
         color: #FFFFFF;
+    }
+
+    .hero__title div {
+        display: inline-block;
     }
 
     .hero__descr {
